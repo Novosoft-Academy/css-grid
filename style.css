@@ -1,0 +1,109 @@
+header h1 {
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    background-color: bisque;
+    border: dashed 1px gray;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin: auto;
+    width: 95vh;
+    height: 60vh;
+    outline: solid 5px black;
+
+    /* Grid container setting start here! */
+
+    display: grid;                  /* Declare grid display */
+
+    /* Defining column and row (2-dimensional) */
+    /* grid-template-columns: [col-start] 1fr [col-2] 1fr [col-3] 1fr [col-end]; */       /* Can be any value with unit, 'auto' to fill based on content */
+    grid-template-columns: repeat(3, 150px);                          /* Repitive value can be shorten with: repeat(3, 150px) */
+    grid-template-rows: [row-start] 100px [row-2] 50px [row-3] 100px[row-end] ;
+    
+    grid-auto-flow: row;                      /* row | column | dense */
+    /* grid-auto-columns: 50px; */
+    grid-auto-rows: 20px;
+
+   /*  grid-template-areas:  */                        /* grid-name | .  */
+   /*  "header header header"
+    "aside . main"
+    "footer footer footer"; */
+
+    /* Gap */
+    /* row-gap: 3px; */
+    /* column-gap: 5px; */
+    /* gap: 3px 5px; */
+
+    /* Define overall position of items */
+    /* align-items: stretch; */                          /* stretch | start | end | center */
+    /* justify-items: center; */                            /* stretch | start | end | center */
+    place-items: stretch;                     
+    /* align-content: space-evenly; */                            /* start | end | center | stretch | space-around | space-between | space-evenly */
+    /* justify-content: center; */                          /* start | end | center | stretch | space-around | space-between | space-evenly */
+    place-content: center start;
+}
+
+/* Grid item setting start here! */
+ 
+.item:nth-child(1) {
+    /* Row */
+    /* grid-row-start: 1; */
+    /* grid-row-end: 3; */
+    /* grid-row: 1/4; */                                /* row-start/row-end */
+
+    /* Column */
+    /* grid-column-start: col-start; */
+    /* grid-column-end: col-3; */
+    /* grid-column: 1/3; */                             /* column-start/column-end */
+
+    /* Row and column */
+    /* grid-area: 1/1/3/2; */                             /* row-start/column-start/row-end/column-end | grid-name */
+
+    /* Define specific position of item */
+    align-self: center;                                   /* stretch | start | end | center */
+    justify-self: start;                                 /* stretch | start | end | center */
+    /* place-self: end end; */
+}
+
+
+/* 
+.item:nth-child(1) {
+    grid-area: header;
+}
+
+.item:nth-child(2) {
+    grid-area: header;
+}
+
+.item:nth-child(3) {
+    grid-area: header;
+}
+
+.item:nth-child(4) {
+    grid-area: aside;
+}
+
+.item:nth-child(5) {
+    grid-area: main;
+}
+
+.item:nth-child(6) {
+    grid-area: main;
+}
+
+.item:nth-child(7) {
+    grid-area: footer;
+}
+
+.item:nth-child(8) {
+    grid-area: footer;
+}
+
+.item:nth-child(9) {
+    grid-area: footer;
+} */
