@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        body {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas: 
+            "h h h"
+            "a m m"
+            "f f f";
+        }
+
+        header {
+            grid-area: h;
+            background-color: lightyellow;
+        }
+
+        main {
+            grid-area: m;
+            background-color: lightgreen;
+        }
+
+        aside {
+            grid-area: a;
+            background-color: lightpink;
+        }
+
+        footer {
+            grid-area: f;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        <a href="HOME">HOME</a>
+    </header>
+    <main><h1>Main</h1></main>
+    <aside><h1>Aside</h1></aside>
+    <footer><h1>Footer</h1></footer>
+</body>
+</html>
